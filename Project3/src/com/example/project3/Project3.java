@@ -36,6 +36,30 @@ public class Project3 extends Activity implements OnClickListener {
 		View btnNewUser = (Button) findViewById(R.id.new_user_button);
 		btnNewUser.setOnClickListener(this);
 	}
+	
+	@Override
+	protected void onResume() {
+		userNameEditableField.setText("RESUME");
+	super.onResume();
+	}
+
+	@Override
+	protected void onRestart() {
+		userNameEditableField.setText("RESTART");
+	super.onRestart();
+	}
+
+	@Override
+	protected void onPause() {
+		userNameEditableField.setText("PAUSE");
+	super.onPause();
+	}
+
+	@Override
+	protected void onStop() {
+		userNameEditableField.setText("STOP");
+	super.onStop();
+	}
 
 	private void checkLogin() {
 		String username = this.userNameEditableField.getText().toString();
