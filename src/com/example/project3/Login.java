@@ -2,7 +2,6 @@ package com.example.project3;
 
 import java.util.List;
 
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,8 +15,15 @@ import android.widget.EditText;
 import android.widget.Button;
 
 
-public class Project3 extends Activity implements OnClickListener {
+public class Login extends Activity implements OnClickListener {
+	class Information{
+		public String name, state;
+		public int act, sat;
+		public double gpa;
+	};
 
+	
+	private DatabaseHelper dh;
 	private EditText userNameEditableField;
 	private EditText passwordEditableField;
 	private final static String OPT_NAME = "name";
@@ -25,7 +31,7 @@ public class Project3 extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_project3);
+		setContentView(R.layout.login);
 
 		userNameEditableField = (EditText) findViewById(R.id.username_text);
 		passwordEditableField = (EditText) findViewById(R.id.password_text);
@@ -36,12 +42,13 @@ public class Project3 extends Activity implements OnClickListener {
 		View btnNewUser = (Button) findViewById(R.id.new_user_button);
 		btnNewUser.setOnClickListener(this);
 	}
-
+	
+	
 	private void checkLogin() {
 		String username = this.userNameEditableField.getText().toString();
 		String password = this.passwordEditableField.getText().toString();
-		startActivity(new Intent(this, Settings.class));
-		/*this.dh = new DatabaseHelper(this);
+		
+		this.dh = new DatabaseHelper(this);
 		List<String> names = this.dh.selectAll(username, password);
 		if (names.size() > 0) { // Login successful
 			// Save username as the name of the player
@@ -50,22 +57,23 @@ public class Project3 extends Activity implements OnClickListener {
 			SharedPreferences.Editor editor = settings.edit();
 			editor.putString(OPT_NAME, username);
 			editor.commit();
-
-			// Bring up the GameOptions screen
-			startActivity(new Intent(this, GameOptions.class));
+			
+			// Bring up the Settings screen
+			startActivity(new Intent(this, Settings.class));
 			finish();
+		
 		} else {
 			// Try again?
 			new AlertDialog.Builder(this)
 					.setTitle("Error")
 					.setMessage("Login failed")
-					.setNeutralButton("Try Again",
+					.setNeutralButton("OK",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int which) {
 								}
 							}).show();
-		}*/
+		}
 		
 	}
 
@@ -78,7 +86,7 @@ public class Project3 extends Activity implements OnClickListener {
 			finish();
 			break;
 		case R.id.new_user_button:
-			//startActivity(new Intent(this, Account.class));
+			startActivity(new Intent(this, NewUser.class));
 			break;
 		}
 	}

@@ -208,40 +208,55 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int TextView02=0x7f05000a;
-        public static final int act=0x7f05000f;
-        public static final int act_label=0x7f05000e;
-        public static final int action_settings=0x7f050011;
-        public static final int cancel_button=0x7f050008;
-        public static final int gpa=0x7f05000b;
+        public static final int act=0x7f050015;
+        public static final int act_label=0x7f050014;
+        public static final int action_settings=0x7f050017;
+        public static final int cancel_button=0x7f050009;
+        public static final int done_button=0x7f05000e;
+        public static final int gpa=0x7f050011;
+        public static final int gpa_label=0x7f050010;
         public static final int hybrid=0x7f050004;
-        public static final int login_button=0x7f050007;
-        public static final int new_user_button=0x7f050009;
+        public static final int login_button=0x7f050008;
+        public static final int new_user_button=0x7f05000a;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int password_text=0x7f050006;
-        public static final int sat=0x7f05000d;
-        public static final int sat_label=0x7f05000c;
+        public static final int pager=0x7f05000f;
+        public static final int password=0x7f05000c;
+        public static final int password_confirm=0x7f05000d;
+        public static final int password_text=0x7f050007;
+        public static final int sat=0x7f050013;
+        public static final int sat_label=0x7f050012;
         public static final int satellite=0x7f050002;
-        public static final int save=0x7f050010;
+        public static final int save=0x7f050016;
+        public static final int section_label=0x7f050005;
         public static final int terrain=0x7f050003;
-        public static final int username_text=0x7f050005;
+        public static final int username=0x7f05000b;
+        public static final int username_text=0x7f050006;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
     }
     public static final class layout {
-        public static final int activity_project3=0x7f030000;
-        public static final int settings=0x7f030001;
+        public static final int fragment_school_listings=0x7f030000;
+        public static final int in_state_fragment=0x7f030001;
+        public static final int login=0x7f030002;
+        public static final int national_fragment=0x7f030003;
+        public static final int new_user=0x7f030004;
+        public static final int school_listings=0x7f030005;
+        public static final int settings=0x7f030006;
     }
     public static final class menu {
-        public static final int project3=0x7f0a0000;
+        public static final int in_state=0x7f0a0000;
+        public static final int national=0x7f0a0001;
+        public static final int new_user=0x7f0a0002;
+        public static final int project3=0x7f0a0003;
+        public static final int school__listings=0x7f0a0004;
     }
     public static final class string {
-        public static final int act=0x7f060023;
+        public static final int act=0x7f060022;
         public static final int action_settings=0x7f06001a;
         public static final int app_name=0x7f06001c;
-        public static final int audio=0x7f060034;
+        public static final int audio=0x7f060033;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -265,8 +280,8 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f060014;
-        public static final int cancel=0x7f06004d;
-        public static final int clear=0x7f06002d;
+        public static final int cancel=0x7f060048;
+        public static final int clear=0x7f06002c;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -338,52 +353,54 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
-        public static final int confirm_password=0x7f06002c;
-        public static final int create=0x7f06002e;
-        public static final int create_new_account=0x7f06004b;
-        public static final int done=0x7f06004c;
-        public static final int enter_address_=0x7f060047;
-        public static final int enter_password=0x7f060040;
-        public static final int enter_username=0x7f060026;
-        public static final int exit=0x7f060028;
-        public static final int exit_help=0x7f06003d;
-        public static final int find=0x7f060046;
-        public static final int gpa=0x7f060021;
-        public static final int hello=0x7f06004a;
-        public static final int help=0x7f060038;
-        public static final int help_text=0x7f06001f;
+        public static final int confirm_password=0x7f06002b;
+        public static final int create=0x7f06002d;
+        public static final int create_new_account=0x7f060046;
+        public static final int done=0x7f060047;
+        public static final int enter_password=0x7f06003c;
+        public static final int enter_username=0x7f060025;
+        public static final int exit=0x7f060027;
+        public static final int exit_help=0x7f060039;
+        public static final int find=0x7f060042;
+        public static final int gpa=0x7f060020;
+        public static final int hello=0x7f060045;
+        public static final int hello_world=0x7f06004a;
+        public static final int help=0x7f060037;
         public static final int help_title=0x7f06001e;
-        public static final int id=0x7f060049;
-        public static final int images=0x7f060036;
-        public static final int locate_me=0x7f060048;
-        public static final int login=0x7f060042;
-        public static final int login_title=0x7f060025;
+        public static final int id=0x7f060044;
+        public static final int images=0x7f060035;
+        public static final int locate_me=0x7f060043;
+        public static final int login=0x7f06003e;
+        public static final int login_title=0x7f060024;
         public static final int main_title=0x7f06001b;
-        public static final int new_account=0x7f060029;
-        public static final int new_game=0x7f060033;
-        public static final int new_user=0x7f060041;
-        public static final int options=0x7f060032;
-        public static final int password=0x7f06002b;
-        public static final int permission_launch_activity=0x7f060027;
-        public static final int record_audio=0x7f060031;
-        public static final int record_video=0x7f060045;
-        public static final int sat=0x7f060022;
-        public static final int save=0x7f060024;
-        public static final int sensors=0x7f06003a;
-        public static final int settings=0x7f060037;
-        public static final int settings_label=0x7f060020;
-        public static final int show_image=0x7f06003e;
-        public static final int start_audio=0x7f06002f;
-        public static final int start_video=0x7f060043;
-        public static final int stop_audio=0x7f060030;
-        public static final int stop_video=0x7f060044;
-        public static final int take_picture=0x7f06003f;
-        public static final int tic_tac_toe_on_wikipedia=0x7f06003b;
-        public static final int tic_tac_toe_on_wikipedia_in_web_view=0x7f06003c;
+        public static final int new_account=0x7f060028;
+        public static final int new_game=0x7f060032;
+        public static final int new_user=0x7f06003d;
+        public static final int options=0x7f060031;
+        public static final int password=0x7f06002a;
+        public static final int permission_launch_activity=0x7f060026;
+        public static final int record_audio=0x7f060030;
+        public static final int record_video=0x7f060041;
+        public static final int sat=0x7f060021;
+        public static final int save=0x7f060023;
+        public static final int sensors=0x7f060038;
+        public static final int settings=0x7f060036;
+        public static final int settings_label=0x7f06001f;
+        public static final int show_image=0x7f06003a;
+        public static final int start_audio=0x7f06002e;
+        public static final int start_video=0x7f06003f;
+        public static final int stop_audio=0x7f06002f;
+        public static final int stop_video=0x7f060040;
+        public static final int take_picture=0x7f06003b;
         public static final int title=0x7f06001d;
-        public static final int username=0x7f06002a;
-        public static final int video=0x7f060035;
-        public static final int where_am_i_=0x7f060039;
+        public static final int title_activity_in_state_fragment=0x7f06004f;
+        public static final int title_activity_national_fragment=0x7f06004e;
+        public static final int title_activity_new_user=0x7f060049;
+        public static final int title_activity_school__listings=0x7f06004b;
+        public static final int title_section1=0x7f06004c;
+        public static final int title_section2=0x7f06004d;
+        public static final int username=0x7f060029;
+        public static final int video=0x7f060034;
     }
     public static final class style {
         /** 
