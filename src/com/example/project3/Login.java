@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -23,7 +24,8 @@ public class Login extends Activity implements OnClickListener {
 	};
 
 	
-	private DatabaseHelper dh;
+	private UserInfo user;
+	private DatabaseHandler dh;
 	private EditText userNameEditableField;
 	private EditText passwordEditableField;
 	private final static String OPT_NAME = "name";
@@ -48,18 +50,38 @@ public class Login extends Activity implements OnClickListener {
 		String username = this.userNameEditableField.getText().toString();
 		String password = this.passwordEditableField.getText().toString();
 		
-		this.dh = new DatabaseHelper(this);
-		List<String> names = this.dh.selectAll(username, password);
-		if (names.size() > 0) { // Login successful
+		
+		SchoolDatabaseHandler sdh = new SchoolDatabaseHandler(this);
+		sdh.addSchool(new SchoolInfo("Ohio State University", "OH", 3.5, 1800, 30));
+		sdh.addSchool(new SchoolInfo("Akron University", "OH", 3.0, 1600, 24));
+		sdh.addSchool(new SchoolInfo("University of Michigan", "MI", 3.8, 2000, 31));
+		
+		
+		
+	
+		this.user = new UserInfo(username,password);
+		this.dh = new DatabaseHandler(this);
+		List<UserInfo> users = this.dh.getAllUsers();
+		boolean valid=false;
+		for (int i =0; i < users.size(); i++)
+		{
+			if (users.get(i).getName().equals(username) && users.get(i).getPassword().equals(password)){
+				valid = true;
+				break;
+			}
+		}
+		if (valid) { // Login successful
 			// Save username as the name of the player
-			SharedPreferences settings = PreferenceManager
-					.getDefaultSharedPreferences(this);
+			SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 			SharedPreferences.Editor editor = settings.edit();
 			editor.putString(OPT_NAME, username);
 			editor.commit();
 			
 			// Bring up the Settings screen
-			startActivity(new Intent(this, Settings.class));
+			Intent intent = new Intent(this, Settings.class);
+			intent.putExtra("NAME", username);
+			startActivity(intent);
+			
 			finish();
 		
 		} else {
@@ -80,7 +102,23 @@ public class Login extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.login_button:
-			checkLogin();
+			//checkLogin();
+			GPSTracker gps = new GPSTracker(this);
+			Double latitude = 0.0;
+			Double longitude = 0.0;
+			if(gps.canGetLocation()){
+			latitude = gps.getLatitude();
+            longitude = gps.getLongitude();
+			}
+			new AlertDialog.Builder(this)
+			.setTitle("Error")
+			.setMessage("Login failed")
+			.setNeutralButton(latitude.toString() + " " + longitude.toString(),
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int which) {
+						}
+					}).show();
 			break;
 		case R.id.cancel_button:
 			finish();
