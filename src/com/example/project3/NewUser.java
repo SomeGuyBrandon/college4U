@@ -16,7 +16,7 @@ public class NewUser extends Activity implements OnClickListener {
 	private EditText etUsername;
 	private EditText etPassword;
 	private EditText etConfirm;
-	private DatabaseHelper dh;
+	private DatabaseHandler dh;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,8 +38,9 @@ public class NewUser extends Activity implements OnClickListener {
 		String confirm = etConfirm.getText().toString();
 		if ((password.equals(confirm)) && (!username.equals(""))
 				&& (!password.equals("")) && (!confirm.equals(""))) {
-			this.dh = new DatabaseHelper(this);
-			this.dh.insert(username, password);
+			this.dh = new DatabaseHandler(this);
+			UserInfo user = new UserInfo(username,password,0,0,0);
+			this.dh.addUser(user);
 			// this.labResult.setText("Added");
 			Toast.makeText(NewUser.this, "new record inserted",
 					Toast.LENGTH_SHORT).show();
