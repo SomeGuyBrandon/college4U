@@ -102,7 +102,23 @@ public class Login extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.login_button:
-			checkLogin();
+			//checkLogin();
+			GPSTracker gps = new GPSTracker(this);
+			Double latitude = 0.0;
+			Double longitude = 0.0;
+			if(gps.canGetLocation()){
+			latitude = gps.getLatitude();
+            longitude = gps.getLongitude();
+			}
+			new AlertDialog.Builder(this)
+			.setTitle("Error")
+			.setMessage("Login failed")
+			.setNeutralButton(latitude.toString() + " " + longitude.toString(),
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int which) {
+						}
+					}).show();
 			break;
 		case R.id.cancel_button:
 			finish();
