@@ -15,7 +15,7 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
 
 	// All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
  
     // Database Name
     private static final String DATABASE_NAME = "schoolInfo";
@@ -65,8 +65,8 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME, school.getName()); 
         values.put(KEY_STATE, school.getState()); 
         values.put(KEY_GPA, school.getGPA()); 
-        values.put(KEY_ACT, school.getACT()); 
         values.put(KEY_SAT, school.getSAT()); 
+        values.put(KEY_ACT, school.getACT()); 
      
         // Inserting Row
         db.insert(TABLE_SCHOOLS, null, values);
@@ -105,8 +105,8 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
             school.setName(cursor.getString(1));
             school.setState(cursor.getString(5));
             school.setGPA(Double.parseDouble(cursor.getString(2)));
-            school.setACT(Integer.parseInt(cursor.getString(3)));
-            school.setSAT(Integer.parseInt(cursor.getString(4)));
+            school.setACT(Integer.parseInt(cursor.getString(4)));
+            school.setSAT(Integer.parseInt(cursor.getString(3)));
             // Adding contact to list
             schoolList.add(school);
         } while (cursor.moveToNext());
