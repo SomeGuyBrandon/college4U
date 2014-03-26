@@ -15,7 +15,7 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
 
 	// All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 14;
  
     // Database Name
     private static final String DATABASE_NAME = "schoolInfo";
