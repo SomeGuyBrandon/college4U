@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-	
-
 	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:stretchColumns="*" >
     
-    <!-- 	Each of the tablerow sections will create a new row  -->
+	    
+<!-- 	Each of the tablerow sections will create a new row  -->
     <TableRow
         android:layout_margin="2dip"
         android:background="#ffffff" >
@@ -32,6 +31,10 @@
             android:background="#888888"
             android:text="ACT" />
         
+         <TextView
+            android:layout_margin="2dip"
+            android:background="#888888"
+            android:text="State" />
     </TableRow>
     
 <!--     row two -->
@@ -67,6 +70,12 @@
             android:id="@+id/act1"
             />
         
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state1"
+            />
     </TableRow>
 
 <!--     row three -->
@@ -102,6 +111,12 @@
             android:id="@+id/act2"
             />
         
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state2"
+            />
     </TableRow>
     
     <TableRow
@@ -136,6 +151,12 @@
             android:id="@+id/act3"
             />
         
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state3"
+            />
     </TableRow>
     
     <TableRow
@@ -171,7 +192,12 @@
             android:id="@+id/act4"
             />
         
-        
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state4"
+            />
     </TableRow>
     <TableRow
         android:layout_margin="2dip"
@@ -205,7 +231,12 @@
             android:id="@+id/act5"
             />
         
-        
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state5"
+            />
     </TableRow>
 
 <!--     row three -->
@@ -241,7 +272,12 @@
             android:id="@+id/act6"
             />
         
-        
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state6"
+            />
     </TableRow>
     
     <TableRow
@@ -276,7 +312,12 @@
             android:id="@+id/act7"
             />
         
-       
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state7"
+            />
     </TableRow>
     
     <TableRow
@@ -312,6 +353,12 @@
             android:id="@+id/act8"
             />
         
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state8"
+            />
     </TableRow>
     
     <TableRow
@@ -346,7 +393,12 @@
             android:id="@+id/act9"
             />
         
-       
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state9"
+            />
     </TableRow>
     
     <TableRow
@@ -382,7 +434,12 @@
             android:id="@+id/act10"
             />
         
-        
+        <TextView
+            android:layout_margin="2dip"
+            android:background="#cccccc"
+            android:text="" 
+            android:id="@+id/state10"
+            />
     </TableRow>
     
     <WebView
@@ -391,6 +448,5 @@
         android:layout_height="200dip"
         android:layout_weight="1.0"/>
  </TableLayout>
-
 
 
