@@ -15,7 +15,7 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
 
 	// All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 13;
  
     // Database Name
     private static final String DATABASE_NAME = "schoolInfo";
@@ -30,6 +30,7 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_GPA = "gpa";
     private static final String KEY_ACT = "act";
     private static final String KEY_SAT = "sat";
+    private static final String KEY_URL = "url";
  
     public SchoolDatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -42,7 +43,7 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
     	
         String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_SCHOOLS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_GPA + " REAL," 
-        		+ KEY_ACT + " INTEGER," + KEY_SAT + " INTEGER," + KEY_STATE + " TEXT)";
+        		+ KEY_ACT + " INTEGER," + KEY_SAT + " INTEGER," + KEY_STATE + " TEXT," + KEY_URL + " TEXT)";
         db.execSQL(CREATE_USERS_TABLE);
         
     }
@@ -65,8 +66,9 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME, school.getName()); 
         values.put(KEY_STATE, school.getState()); 
         values.put(KEY_GPA, school.getGPA()); 
-        values.put(KEY_ACT, school.getACT()); 
         values.put(KEY_SAT, school.getSAT()); 
+        values.put(KEY_ACT, school.getACT()); 
+        values.put(KEY_URL, school.getURL()); 
      
         // Inserting Row
         db.insert(TABLE_SCHOOLS, null, values);
@@ -105,8 +107,9 @@ public class SchoolDatabaseHandler extends SQLiteOpenHelper {
             school.setName(cursor.getString(1));
             school.setState(cursor.getString(5));
             school.setGPA(Double.parseDouble(cursor.getString(2)));
-            school.setACT(Integer.parseInt(cursor.getString(3)));
-            school.setSAT(Integer.parseInt(cursor.getString(4)));
+            school.setACT(Integer.parseInt(cursor.getString(4)));
+            school.setSAT(Integer.parseInt(cursor.getString(3)));
+            school.setURL(cursor.getString(6));
             // Adding contact to list
             schoolList.add(school);
         } while (cursor.moveToNext());

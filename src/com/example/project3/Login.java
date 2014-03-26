@@ -17,12 +17,6 @@ import android.widget.Button;
 
 
 public class Login extends Activity implements OnClickListener {
-	class Information{
-		public String name, state;
-		public int act, sat;
-		public double gpa;
-	};
-
 	
 	private UserInfo user;
 	private DatabaseHandler dh;
@@ -49,14 +43,7 @@ public class Login extends Activity implements OnClickListener {
 	private void checkLogin() {
 		String username = this.userNameEditableField.getText().toString();
 		String password = this.passwordEditableField.getText().toString();
-		
-		
-		SchoolDatabaseHandler sdh = new SchoolDatabaseHandler(this);
-		sdh.addSchool(new SchoolInfo("Ohio State University", "OH", 3.5, 1800, 30));
-		sdh.addSchool(new SchoolInfo("Akron University", "OH", 3.0, 1600, 24));
-		sdh.addSchool(new SchoolInfo("University of Michigan", "MI", 3.8, 2000, 31));
-		
-		
+			
 		
 	
 		this.user = new UserInfo(username,password);
@@ -102,23 +89,7 @@ public class Login extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.login_button:
-			//checkLogin();
-			GPSTracker gps = new GPSTracker(this);
-			Double latitude = 0.0;
-			Double longitude = 0.0;
-			if(gps.canGetLocation()){
-			latitude = gps.getLatitude();
-            longitude = gps.getLongitude();
-			}
-			new AlertDialog.Builder(this)
-			.setTitle("Error")
-			.setMessage("Login failed")
-			.setNeutralButton(latitude.toString() + " " + longitude.toString(),
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int which) {
-						}
-					}).show();
+			checkLogin();
 			break;
 		case R.id.cancel_button:
 			finish();

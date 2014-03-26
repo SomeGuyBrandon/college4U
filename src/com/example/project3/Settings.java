@@ -60,75 +60,6 @@ public class Settings extends Activity implements OnClickListener{
 		}
 		
 		
-		/*gpa.addTextChangedListener(new TextWatcher() {
-			
-	          public void afterTextChanged(Editable s) {
-	        	  
-	        	  if (!gpa.getText().toString().equals("") && ( Double.parseDouble(gpa.getText().toString())<0.0
-	        			  ||Double.parseDouble(gpa.getText().toString())>4.0)){
-	        		  
-	        		  	new AlertDialog.Builder(this)
-	        		  		.setTitle("GPA").setMessage("GPA Invalid").setNeutralButton("Set GPA to a valid number from 0.0-4.0",
-	        		  				new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int which) {
-								}
-							}).show();
-	        		  
-	        	  }
-
-	          }
-
-	          public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-	          public void onTextChanged(CharSequence s, int start, int before, int count) {}
-		});
-		
-		act.addTextChangedListener(new TextWatcher() {
-			
-	          public void afterTextChanged(Editable s) {
-	        	  
-	        	  if (!act.getText().toString().equals("") && (Integer.parseInt(act.getText().toString())<0
-	        			  ||Integer.parseInt(act.getText().toString())>36)){
-	        		  
-	        		  	new AlertDialog.Builder(this)
-	        		  		.setTitle("GPA").setMessage("GPA Invalid").setNeutralButton("Set GPA to a valid number from 0.0-4.0",
-	        		  				new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int which) {
-								}
-							}).show();
-	        		  
-	        	  }
-
-	          }
-
-	          public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-	          public void onTextChanged(CharSequence s, int start, int before, int count) {}
-		});
-		
-		sat.addTextChangedListener(new TextWatcher() {
-			
-	          public void afterTextChanged(Editable s) {
-	        	  
-	        	  if (!sat.getText().toString().equals("") && (Integer.parseInt(sat.getText().toString())<0
-	        			  ||Integer.parseInt(sat.getText().toString())>2400)  ){
-	        		  
-	        		  
-	        	  }
-	        		 
-	        	  
-
-	          }
-	          
-
-	          public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-	          public void onTextChanged(CharSequence s, int start, int before, int count) {}
-		});*/
-		
-		
 	}
 	
 	
@@ -184,7 +115,9 @@ public class Settings extends Activity implements OnClickListener{
 						users.get(i).setACT(sat_num);
 						users.get(i).setSAT(act_num);
 						Integer k = dh.updateUser(users.get(i));
-						startActivity(new Intent(this, School_Listings.class));
+						Intent intent = new Intent(this, School_Listings.class);
+						intent.putExtra("NAME", username);
+						startActivity(intent);
 					}
 					break;
 				}
