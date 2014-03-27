@@ -15,6 +15,7 @@
             android:id="@+id/gpa_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
             android:text="GPA:" />
 
         <EditText
@@ -22,12 +23,14 @@
             android:layout_width="138dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
+            android:background="@drawable/testbar"
             android:singleLine="true" />
 
         <TextView
             android:id="@+id/sat_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
             android:text="SAT:" />
 
          <EditText
@@ -35,12 +38,14 @@
              android:layout_width="112dp"
              android:layout_height="wrap_content"
              android:inputType="number"
+             android:background="@drawable/testbar"
              android:singleLine="true" />
 
          <TextView
              android:id="@+id/act_label"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
+             android:paddingLeft="20dp"
              android:text="ACT:" />
 
           <EditText
@@ -48,6 +53,7 @@
               android:layout_width="117dp"
               android:layout_height="wrap_content"
               android:inputType="number"
+              android:background="@drawable/testbar"
               android:singleLine="true" />
 
           <Button

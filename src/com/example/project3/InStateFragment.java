@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.example.project3.NationalFragment.BestColleges;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -15,11 +16,18 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-public class InStateFragment extends Fragment {
+public class InStateFragment extends Fragment implements OnClickListener{
 
+	WebView schoolWebView;
+	SchoolDatabaseHandler sdh;
+	TextView name1,name2,name3,name4,name5,name6,name7,name8,name9,name10;
+	
 	class BestColleges
 	{
 		public int _pos;
@@ -35,9 +43,26 @@ public class InStateFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
 
 		View rootView = inflater.inflate(R.layout.in_state_fragment, container, false);
 
+		
+	    schoolWebView = (WebView) rootView.findViewById(R.id.schoolwebview);
+	    schoolWebView.getSettings().setJavaScriptEnabled(true);
+	    schoolWebView.getSettings().setLoadWithOverviewMode(true);
+	    schoolWebView.getSettings().setUseWideViewPort(true);
+	    
+	    schoolWebView.setWebViewClient(new WebViewClient() {
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url)
+			{
+				return false;
+			}
+			
+		});
+		
+		
 		// retrieve username from bundle
 		Bundle bundle = this.getArguments();
 		String username="";
@@ -58,7 +83,7 @@ public class InStateFragment extends Fragment {
 		}
 
 		// Retrieve all the colleges
-		SchoolDatabaseHandler sdh = new SchoolDatabaseHandler(rootView.getContext());
+		sdh = new SchoolDatabaseHandler(rootView.getContext());
 		List<SchoolInfo> schools = new ArrayList<SchoolInfo>();
 		schools = sdh.getAllSchools();
 
@@ -117,16 +142,26 @@ public class InStateFragment extends Fragment {
 
 
 			// Print best colleges
-			TextView name1 =  (TextView) rootView.findViewById(R.id.name1);
-			TextView name2 =  (TextView) rootView.findViewById(R.id.name2);
-			TextView name3 =  (TextView) rootView.findViewById(R.id.name3);
-			TextView name4 =  (TextView) rootView.findViewById(R.id.name4);
-			TextView name5 =  (TextView) rootView.findViewById(R.id.name5);
-			TextView name6 =  (TextView) rootView.findViewById(R.id.name6);
-			TextView name7 =  (TextView) rootView.findViewById(R.id.name7);
-			TextView name8 =  (TextView) rootView.findViewById(R.id.name8);
-			TextView name9 =  (TextView) rootView.findViewById(R.id.name9);
-			TextView name10 =  (TextView) rootView.findViewById(R.id.name10);
+			name1 =  (TextView) rootView.findViewById(R.id.name1);
+			name2 =  (TextView) rootView.findViewById(R.id.name2);
+			name3 =  (TextView) rootView.findViewById(R.id.name3);
+			name4 =  (TextView) rootView.findViewById(R.id.name4);
+			name5 =  (TextView) rootView.findViewById(R.id.name5);
+			name6 =  (TextView) rootView.findViewById(R.id.name6);
+			name7 =  (TextView) rootView.findViewById(R.id.name7);
+			name8 =  (TextView) rootView.findViewById(R.id.name8);
+			name9 =  (TextView) rootView.findViewById(R.id.name9);
+			name10 =  (TextView) rootView.findViewById(R.id.name10);
+			name1.setOnClickListener(this);
+			name2.setOnClickListener(this);
+			name3.setOnClickListener(this);
+			name4.setOnClickListener(this);
+			name5.setOnClickListener(this);
+			name6.setOnClickListener(this);
+			name7.setOnClickListener(this);
+			name8.setOnClickListener(this);
+			name9.setOnClickListener(this);
+			name10.setOnClickListener(this);
 			TextView gpa1 =  (TextView) rootView.findViewById(R.id.gpa1);
 			TextView gpa2 =  (TextView) rootView.findViewById(R.id.gpa2);
 			TextView gpa3 =  (TextView) rootView.findViewById(R.id.gpa3);
@@ -234,7 +269,100 @@ public class InStateFragment extends Fragment {
 				act10.setText(act.toString());
 			}
 		}
+		
+		// set webview to top school
+		schoolWebView.loadUrl(schools.get(best.get(0)._pos).getURL());
 
 		return rootView;
 	}
+	
+	public void onClick(View v) {
+		List<SchoolInfo> schools = sdh.getAllSchools();
+		switch (v.getId()) {
+		case R.id.name1:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name1.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name2:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name2.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name3:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name3.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name4:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name4.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name5:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name5.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name6:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name6.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name7:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name7.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name8:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name8.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name9:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name9.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		case R.id.name10:
+			for (int i = 0; i < schools.size(); i++){
+				if (schools.get(i).getName().equals(name10.getText().toString())){
+					schoolWebView.loadUrl(schools.get(i).getURL());
+					break;
+				}
+			}
+			break;
+		}
+		
+	}
+	
+	
+	
 }

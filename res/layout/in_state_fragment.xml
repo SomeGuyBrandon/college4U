@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+	
+
 	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:stretchColumns="*" >
     
-	    
-<!-- 	Each of the tablerow sections will create a new row  -->
+    <!-- 	Each of the tablerow sections will create a new row  -->
     <TableRow
         android:layout_margin="2dip"
         android:background="#ffffff" >
@@ -383,6 +384,12 @@
         
         
     </TableRow>
+    
+    <WebView
+        android:id="@+id/schoolwebview"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:layout_weight="1.0"/>
  </TableLayout>
 
 

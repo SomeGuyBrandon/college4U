@@ -441,6 +441,12 @@
             android:id="@+id/state10"
             />
     </TableRow>
+    
+    <WebView
+        android:id="@+id/schoolwebview"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:layout_weight="1.0"/>
  </TableLayout>
 
 

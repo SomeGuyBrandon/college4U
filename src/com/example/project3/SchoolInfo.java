@@ -9,6 +9,7 @@ public class SchoolInfo {
     int _act;
     int _sat;
     double _gpa;
+    String _url;
      
     // Empty constructor
     public SchoolInfo(){
@@ -16,12 +17,13 @@ public class SchoolInfo {
     }
     
     // constructor
-    public SchoolInfo(String name, String state, double gpa, int act, int sat){
+    public SchoolInfo(String name, String state, double gpa, int act, int sat, String url){
         this._name = name;
         this._state = state;
         this._gpa = gpa;
         this._act = act;
         this._sat = sat;
+        this._url = url;
     }
     
     public SchoolInfo(int id, String name, String state){
@@ -93,6 +95,16 @@ public class SchoolInfo {
     // setting SAT
     public void setSAT(int sat){
         this._sat = sat;
+    }
+    
+ // getting URL
+    public String getURL(){
+        return this._url;
+    }
+     
+    // setting URL
+    public void setURL(String url){
+        this._url = url;
     }
 }
 
