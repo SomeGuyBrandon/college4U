@@ -23,7 +23,7 @@
             android:layout_width="138dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:background="@drawable/testbar"
+           	android:background="@drawable/inputbox"
             android:singleLine="true" />
 
         <TextView
@@ -38,7 +38,7 @@
              android:layout_width="112dp"
              android:layout_height="wrap_content"
              android:inputType="number"
-             android:background="@drawable/testbar"
+             android:background="@drawable/inputbox"
              android:singleLine="true" />
 
          <TextView
@@ -53,7 +53,7 @@
               android:layout_width="117dp"
               android:layout_height="wrap_content"
               android:inputType="number"
-              android:background="@drawable/testbar"
+              android:background="@drawable/inputbox"
               android:singleLine="true" />
 
           <Button
