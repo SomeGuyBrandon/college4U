@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 
 	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
@@ -442,11 +443,449 @@
             />
     </TableRow>
     
+=======
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <TableRow
+      
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip"
+        android:background="#aa66cc"
+        android:minHeight="25dp" >
+
+        <TextView
+            android:layout_width="218dip"
+            android:layout_margin="2dip"
+ 
+            android:text="School" />
+
+        <TextView
+            android:layout_width="35dip"
+            android:layout_margin="2dip"
+            
+            android:text="GPA" />
+
+        <TextView
+            android:layout_width="34dip"
+            android:layout_margin="2dip"
+            
+            android:text="SAT" />
+
+        <TextView
+            android:layout_width="29dip"
+            android:layout_margin="2dip"
+            
+            android:text="ACT" />
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_margin="2dip"
+            
+            android:text="ST" />
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="290dp"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*" >
+
+            <!-- Each of the tablerow sections will create a new row -->
+
+
+            <!-- row two -->
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name1"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa1"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat1"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act1"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state1"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <!-- row three -->
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa2"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat2"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act2"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state2"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name3"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa3"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat3"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act3"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state3"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name4"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa4"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat4"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act4"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state4"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name5"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa5"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat5"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act5"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state5"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <!-- row three -->
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name6"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa6"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat6"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act6"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state6"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name7"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa7"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat7"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act7"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state7"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name8"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa8"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat8"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act8"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state8"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name9"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa9"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat9"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act9"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state9"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#ffffff"
+                android:minHeight="44dp" >
+
+                <TextView
+                    android:id="@+id/name10"
+                    android:layout_margin="2dip"
+                    android:background="#9933cc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/gpa10"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sat10"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/act10"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/state10"
+                    android:layout_margin="2dip"
+                    android:background="#cccccc"
+                    android:text="" />
+            </TableRow>
+
+
+        </TableLayout>
+    </ScrollView>
+
+>>>>>>> FatDinosaur/master
     <WebView
         android:id="@+id/schoolwebview"
         android:layout_width="match_parent"
         android:layout_height="200dip"
+<<<<<<< HEAD
         android:layout_weight="1.0"/>
  </TableLayout>
 
 
+=======
+        android:layout_weight="1.0" />
+
+</TableLayout>
+>>>>>>> FatDinosaur/master
