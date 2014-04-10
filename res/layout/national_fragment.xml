@@ -1,490 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-
-	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:stretchColumns="*" >
-    
-	    
-<!-- 	Each of the tablerow sections will create a new row  -->
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#888888"
-            android:text="School" />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#888888"
-            android:text="GPA" />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#888888"
-            android:text="SAT" />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#888888"
-            android:text="ACT" />
-        
-         <TextView
-            android:layout_margin="2dip"
-            android:background="#888888"
-            android:text="State" />
-    </TableRow>
-    
-<!--     row two -->
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name1"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa1"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat1"
-             />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act1"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state1"
-            />
-    </TableRow>
-
-<!--     row three -->
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name2"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa2"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat2"
-             />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act2"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state2"
-            />
-    </TableRow>
-    
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name3"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa3"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat3"
-             />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act3"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state3"
-            />
-    </TableRow>
-    
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name4"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa4"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat4"
-             />
-        
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act4"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state4"
-            />
-    </TableRow>
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name5"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa5"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat5"
-             />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act5"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state5"
-            />
-    </TableRow>
-
-<!--     row three -->
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name6"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa6"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat6"
-             />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act6"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state6"
-            />
-    </TableRow>
-    
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name7"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa7"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat7"
-             />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act7"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state7"
-            />
-    </TableRow>
-    
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name8"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa8"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat8"
-             />
-        
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act8"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state8"
-            />
-    </TableRow>
-    
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name9"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa9"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat9"
-             />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act9"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state9"
-            />
-    </TableRow>
-    
-    <TableRow
-        android:layout_margin="2dip"
-        android:background="#ffffff" >
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/name10"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/gpa10"
-             />
-
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text=""
-            android:id="@+id/sat10"
-             />
-        
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/act10"
-            />
-        
-        <TextView
-            android:layout_margin="2dip"
-            android:background="#cccccc"
-            android:text="" 
-            android:id="@+id/state10"
-            />
-    </TableRow>
-    
-=======
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
-
-    <TableRow
-      
-        android:layout_height="wrap_content"
-        android:layout_margin="2dip"
-        android:background="#aa66cc"
-        android:minHeight="25dp" >
-
-        <TextView
-            android:layout_width="218dip"
-            android:layout_margin="2dip"
- 
-            android:text="School" />
-
-        <TextView
-            android:layout_width="35dip"
-            android:layout_margin="2dip"
-            
-            android:text="GPA" />
-
-        <TextView
-            android:layout_width="34dip"
-            android:layout_margin="2dip"
-            
-            android:text="SAT" />
-
-        <TextView
-            android:layout_width="29dip"
-            android:layout_margin="2dip"
-            
-            android:text="ACT" />
-
-        <TextView
-            android:layout_width="20dip"
-            android:layout_margin="2dip"
-            
-            android:text="ST" />
-    </TableRow>
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -495,11 +12,48 @@
         android:scrollbars="vertical"
         android:shrinkColumns="*"
         android:stretchColumns="*" >
-
+    	
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:stretchColumns="*" >
+        
+    	<TableRow
+      
+        	android:layout_height="wrap_content"
+        	android:layout_margin="2dip"
+        	android:background="#ef1234"
+        	android:minHeight="25dp" >
+
+        <TextView
+            android:layout_margin="2dip"
+ 
+            android:text="School" />
+
+        <TextView
+            android:layout_margin="2dip"
+            
+            android:text="GPA" />
+
+        <TextView
+            android:layout_margin="2dip"
+            
+            android:text="SAT" />
+
+        <TextView
+            android:layout_margin="2dip"
+            
+            android:text="ACT" />
+        
+        <TextView
+            android:layout_margin="2dip"
+            
+            android:text="State" />
+        
+   	 	</TableRow>
+
+
+        
 
             <!-- Each of the tablerow sections will create a new row -->
 
@@ -514,7 +68,10 @@
                 <TextView
                     android:id="@+id/name1"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -552,7 +109,10 @@
                 <TextView
                     android:id="@+id/name2"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -588,7 +148,10 @@
                 <TextView
                     android:id="@+id/name3"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -624,7 +187,10 @@
                 <TextView
                     android:id="@+id/name4"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -660,7 +226,10 @@
                 <TextView
                     android:id="@+id/name5"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -698,7 +267,10 @@
                 <TextView
                     android:id="@+id/name6"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -734,7 +306,10 @@
                 <TextView
                     android:id="@+id/name7"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -770,7 +345,10 @@
                 <TextView
                     android:id="@+id/name8"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -806,7 +384,10 @@
                 <TextView
                     android:id="@+id/name9"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -842,7 +423,10 @@
                 <TextView
                     android:id="@+id/name10"
                     android:layout_margin="2dip"
-                    android:background="#9933cc"
+                    android:background="#ff0000"
+                    android:layout_width="fill_parent" 
+    				android:layout_height="fill_parent" 
+    				android:gravity="center"
                     android:text="" />
 
                 <TextView
@@ -869,23 +453,13 @@
                     android:background="#cccccc"
                     android:text="" />
             </TableRow>
-
-
         </TableLayout>
     </ScrollView>
 
->>>>>>> FatDinosaur/master
     <WebView
         android:id="@+id/schoolwebview"
         android:layout_width="match_parent"
         android:layout_height="200dip"
-<<<<<<< HEAD
-        android:layout_weight="1.0"/>
- </TableLayout>
-
-
-=======
         android:layout_weight="1.0" />
 
 </TableLayout>
->>>>>>> FatDinosaur/master
