@@ -9,6 +9,7 @@ import java.util.List;
 import com.example.project3.NationalFragment.BestColleges;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -40,13 +41,16 @@ public class InStateFragment extends Fragment implements OnClickListener{
 		}
 	}
 
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		
-
-		View rootView = inflater.inflate(R.layout.in_state_fragment, container, false);
-
+		View rootView;
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+			rootView = inflater.inflate(R.layout.in_state_fragment, container, false);
+		else
+			rootView = inflater.inflate(R.layout.in_state_fragment_horizontal, container, false);
 		
 	    schoolWebView = (WebView) rootView.findViewById(R.id.schoolwebview);
 	    schoolWebView.getSettings().setJavaScriptEnabled(true);
@@ -116,8 +120,15 @@ public class InStateFragment extends Fragment implements OnClickListener{
 			// convert to abbreviated state name
 			if (state.equals("Ohio"))
 				state = "OH";
-
-
+			else if (state.equals("California"))
+				state = "CA";
+			else if (state.equals("Florida"))
+				state = "FL";
+			else if (state.equals("New York"))
+				state = "NY";
+			else if (state.equals("Massachusetts"))
+				state = "MA";
+				
 			// Search appropriate colleges for user
 			for (int i = 0 ; i < schools.size(); i++)
 			{
@@ -193,7 +204,7 @@ public class InStateFragment extends Fragment implements OnClickListener{
 			TextView act9 =  (TextView) rootView.findViewById(R.id.act9);
 			TextView act10 =  (TextView) rootView.findViewById(R.id.act10);
 
-			if (best.size()>=10){
+			if (best.size() >= 10){
 				name1.setText(schools.get(best.get(0)._pos).getName());
 				name2.setText(schools.get(best.get(1)._pos).getName());
 				name3.setText(schools.get(best.get(2)._pos).getName());
@@ -361,7 +372,11 @@ public class InStateFragment extends Fragment implements OnClickListener{
 			break;
 		}
 		
+		
 	}
+	
+	
+	
 	
 	
 	
