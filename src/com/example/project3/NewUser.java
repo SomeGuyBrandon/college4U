@@ -1,3 +1,5 @@
+// NewUser handles the creation of a new user account
+
 package com.example.project3;
 
 import android.os.Bundle;
@@ -32,24 +34,32 @@ public class NewUser extends Activity implements OnClickListener {
 	}
 
 	private void CreateAccount() {
-		// this.output = (TextView) this.findViewById(R.id.out_text);
+		
 		String username = etUsername.getText().toString();
 		String password = etPassword.getText().toString();
 		String confirm = etConfirm.getText().toString();
+		
+		// if the password and confirmation are equal and the username 
+		// and password are not empty, create a new record
 		if ((password.equals(confirm)) && (!username.equals(""))
 				&& (!password.equals("")) && (!confirm.equals(""))) {
+			
 			this.dh = new DatabaseHandler(this);
 			UserInfo user = new UserInfo(username,password,0,0,0);
 			this.dh.addUser(user);
-			// this.labResult.setText("Added");
 			Toast.makeText(NewUser.this, "new record inserted",
 					Toast.LENGTH_SHORT).show();
 			finish();
-		} else if ((username.equals("")) || (password.equals(""))
+			
+		} 
+		// if the username, password, or confirmation are empty, tell user
+		else if ((username.equals("")) || (password.equals(""))
 				|| (confirm.equals(""))) {
 			Toast.makeText(NewUser.this, "Missing entry", Toast.LENGTH_SHORT)
 					.show();
-		} else if (!password.equals(confirm)) {
+		} 
+		// if confirmation does not match password, tell user
+		else if (!password.equals(confirm)) {
 			new AlertDialog.Builder(this)
 					.setTitle("Error")
 					.setMessage("passwords do not match")

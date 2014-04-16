@@ -1,3 +1,5 @@
+// This class is used to handle the national school listings
+
 package com.example.project3;
 
 
@@ -7,6 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import android.R.string;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -34,6 +37,7 @@ public class NationalFragment extends Fragment implements OnClickListener {
 		public int _pos;
 		public double _val;
 		
+		// structure to store the top colleges for user
 		public BestColleges(int pos, double val)
 		{
 			_pos = pos;
@@ -46,15 +50,22 @@ public class NationalFragment extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
-    	
-    	
-        View rootView = inflater.inflate(R.layout.national_fragment, container, false);
-         
+        View rootView;
+        
+        // landscape or portrait view
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+			rootView = inflater.inflate(R.layout.national_fragment, container, false);
+		else
+			rootView = inflater.inflate(R.layout.national_fragment_horizontal, container, false);
+        
+        
+        // settings for WebView
         schoolWebView = (WebView) rootView.findViewById(R.id.schoolwebview);
 	    schoolWebView.getSettings().setJavaScriptEnabled(true);
 	    schoolWebView.getSettings().setLoadWithOverviewMode(true);
 	    schoolWebView.getSettings().setUseWideViewPort(true);
 	    
+	    // ability to change webview in the app so browser isn't opened
 	    schoolWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url)
@@ -124,6 +135,8 @@ public class NationalFragment extends Fragment implements OnClickListener {
 		name8 =  (TextView) rootView.findViewById(R.id.name8);
 		name9 =  (TextView) rootView.findViewById(R.id.name9);
 		name10 =  (TextView) rootView.findViewById(R.id.name10);
+		
+		
 		name1.setOnClickListener(this);
 		name2.setOnClickListener(this);
 		name3.setOnClickListener(this);
@@ -134,6 +147,8 @@ public class NationalFragment extends Fragment implements OnClickListener {
 		name8.setOnClickListener(this);
 		name9.setOnClickListener(this);
 		name10.setOnClickListener(this);
+		
+		
         TextView gpa1 =  (TextView) rootView.findViewById(R.id.gpa1);
         TextView gpa2 =  (TextView) rootView.findViewById(R.id.gpa2);
         TextView gpa3 =  (TextView) rootView.findViewById(R.id.gpa3);

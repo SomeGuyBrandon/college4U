@@ -1,3 +1,5 @@
+// This class is used to handle the in-state school listings
+
 package com.example.project3;
 
 import java.io.IOException;
@@ -9,6 +11,7 @@ import java.util.List;
 import com.example.project3.NationalFragment.BestColleges;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -28,6 +31,7 @@ public class InStateFragment extends Fragment implements OnClickListener{
 	SchoolDatabaseHandler sdh;
 	TextView name1,name2,name3,name4,name5,name6,name7,name8,name9,name10;
 	
+	// data structure for storing top colleges for user
 	class BestColleges
 	{
 		public int _pos;
@@ -40,19 +44,28 @@ public class InStateFragment extends Fragment implements OnClickListener{
 		}
 	}
 
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		
-
-		View rootView = inflater.inflate(R.layout.in_state_fragment, container, false);
-
 		
+		View rootView;
+		
+		// whether to load the portrait view or landscape view
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+			rootView = inflater.inflate(R.layout.in_state_fragment, container, false);
+		else
+			rootView = inflater.inflate(R.layout.in_state_fragment_horizontal, container, false);
+		
+		// Enable certain settings for webview
 	    schoolWebView = (WebView) rootView.findViewById(R.id.schoolwebview);
 	    schoolWebView.getSettings().setJavaScriptEnabled(true);
 	    schoolWebView.getSettings().setLoadWithOverviewMode(true);
 	    schoolWebView.getSettings().setUseWideViewPort(true);
 	    
+	    
+	    // make it so the WebView content can be changed
 	    schoolWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url)
@@ -89,6 +102,7 @@ public class InStateFragment extends Fragment implements OnClickListener{
 
 		List<BestColleges> best = new ArrayList<BestColleges>();
 
+		// Get GPS location
 		GPSTracker gps = new GPSTracker(rootView.getContext());
 		boolean GPS_enabled = true;
 		Double latitude = 0.0;
@@ -100,6 +114,7 @@ public class InStateFragment extends Fragment implements OnClickListener{
 		else
 			GPS_enabled = false;
 
+		
 		if (GPS_enabled){
 			// Get Location
 			Geocoder geocoder = new Geocoder(rootView.getContext());
@@ -113,11 +128,31 @@ public class InStateFragment extends Fragment implements OnClickListener{
 			String state = addr.get(0).getAdminArea();
 
 
-			// convert to abbreviated state name
+			// convert GPS admin area to abbreviated state name
+			// only about 10 states are represented
 			if (state.equals("Ohio"))
 				state = "OH";
-
-
+			else if (state.equals("California"))
+				state = "CA";
+			else if (state.equals("Florida"))
+				state = "FL";
+			else if (state.equals("New York"))
+				state = "NY";
+			else if (state.equals("Massachusetts"))
+				state = "MA";
+			else if (state.equals("Texas"))
+				state = "TX";
+			else if (state.equals("Illinois"))
+				state = "IL";
+			else if (state.equals("North Carolina"))
+				state = "NC";
+			else if (state.equals("Washington"))
+				state = "WA";
+			else if (state.equals("Georgia"))
+				state = "GA";
+			else 
+				state = "CO";
+				
 			// Search appropriate colleges for user
 			for (int i = 0 ; i < schools.size(); i++)
 			{
@@ -142,6 +177,7 @@ public class InStateFragment extends Fragment implements OnClickListener{
 
 
 			// Print best colleges
+			// set up textviews
 			name1 =  (TextView) rootView.findViewById(R.id.name1);
 			name2 =  (TextView) rootView.findViewById(R.id.name2);
 			name3 =  (TextView) rootView.findViewById(R.id.name3);
@@ -193,7 +229,7 @@ public class InStateFragment extends Fragment implements OnClickListener{
 			TextView act9 =  (TextView) rootView.findViewById(R.id.act9);
 			TextView act10 =  (TextView) rootView.findViewById(R.id.act10);
 
-			if (best.size()>=10){
+			if (best.size() >= 10){
 				name1.setText(schools.get(best.get(0)._pos).getName());
 				name2.setText(schools.get(best.get(1)._pos).getName());
 				name3.setText(schools.get(best.get(2)._pos).getName());
@@ -276,6 +312,7 @@ public class InStateFragment extends Fragment implements OnClickListener{
 		return rootView;
 	}
 	
+	// if the school's name is touched/clicked, load the website for that school in the WebView
 	public void onClick(View v) {
 		List<SchoolInfo> schools = sdh.getAllSchools();
 		switch (v.getId()) {
@@ -359,10 +396,6 @@ public class InStateFragment extends Fragment implements OnClickListener{
 				}
 			}
 			break;
-		}
-		
-	}
-	
-	
-	
+		}	
+	}	
 }

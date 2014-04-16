@@ -24,6 +24,7 @@ public class UserInfo {
         this._sat = sat;
     }
     
+    // constructor
     public UserInfo(int id, String username, String password){
         this._id = id;
         this._username = username;

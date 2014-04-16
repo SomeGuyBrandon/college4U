@@ -1,3 +1,5 @@
+// This class is used for the login screen
+
 package com.example.project3;
 
 import java.util.List;
@@ -86,6 +88,7 @@ public class Login extends Activity implements OnClickListener {
 		
 	}
 
+	// Onclick event
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.login_button:

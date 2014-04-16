@@ -1,3 +1,5 @@
+// This class is used to handle user accounts added/accessed for College4U.
+
 package com.example.project3;
 
 import java.io.Console;
@@ -51,9 +53,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     	
-        // Drop older table if existed
-        //db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
- 
+
+    	
         if (newVersion > oldVersion) {
             //db.execSQL("ALTER TABLE "+ TABLE_USERS + " ADD COLUMN " + KEY_GPA +  " REAL DEFAULT 0.0");
             db.execSQL("ALTER TABLE "+ TABLE_USERS + " ADD COLUMN " + KEY_ACT +  " INTEGER DEFAULT 0");
@@ -61,10 +62,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         
         
-        // Create tables again
-        //onCreate(db);
+   
     }
     
+    // Add a new user
     public void addUser(UserInfo user) {
         SQLiteDatabase db = this.getWritableDatabase();
      
@@ -80,6 +81,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
     
+    // Get a user from database
     public UserInfo getUser(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
      
@@ -95,8 +97,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return user;
     }
     
-    // Getting All Contacts
- public List<UserInfo> getAllUsers() {
+    // Getting all users and returning a list of them
+    public List<UserInfo> getAllUsers() {
     List<UserInfo> userList = new ArrayList<UserInfo>();
     // Select All Query
     String selectQuery = "SELECT  * FROM " + TABLE_USERS;
@@ -123,7 +125,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     return userList;
 }
     
-    // Updating single user
+    // Updating single user - not used
     public int updateUser(UserInfo user) {
     	SQLiteDatabase db = this.getWritableDatabase();
  

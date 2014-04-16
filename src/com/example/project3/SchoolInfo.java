@@ -1,3 +1,5 @@
+// School object that holds all information about individual school
+
 package com.example.project3;
 
 public class SchoolInfo {

@@ -1,3 +1,5 @@
+// GPSTracker is used to get the GPS coordinates of the android device.
+
 package com.example.project3;
 
 import android.app.AlertDialog;
@@ -29,12 +31,16 @@ public class GPSTracker extends Service implements LocationListener{
 	private static final long MIN_TIME_BW_UPDATES = 1000*60*1;
 	
 	protected LocationManager locationManager;
+
 	
+	// Constructor
 	public GPSTracker(Context context){
 		this.mContext = context;
 		getLocation();
 	}
 	
+	
+	// Ensures that GPS is enabled and if so returns a location
 	public Location getLocation(){
 		try{
 			locationManager = (LocationManager) mContext.getSystemService(LOCATION_SERVICE);
@@ -80,12 +86,14 @@ public class GPSTracker extends Service implements LocationListener{
 		return location;
 	}
 	
+	// stops updates from gps
 	public void stopUsingGPS(){
 		if(locationManager != null){
 			locationManager.removeUpdates(GPSTracker.this);
 		}
 	}
 	
+	// return latitude
 	public double getLatitude(){
 		if(location != null){
 			latitude = location.getLatitude();
@@ -93,6 +101,7 @@ public class GPSTracker extends Service implements LocationListener{
 		return latitude;
 	}
 	
+	// return longitude
 	public double getLongitude(){
 		if(location != null){
 			longitude = location.getLongitude();
@@ -100,10 +109,12 @@ public class GPSTracker extends Service implements LocationListener{
 		return longitude;
 	}
 	
+	// returns whether the location can be retrieved or not
 	public boolean canGetLocation(){
 		return this.canGetLocation;
 	}
 	
+	// Returns warnings
 	public void showSettingsAlert(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
       
